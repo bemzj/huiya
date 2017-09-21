@@ -82,3 +82,12 @@ $(window).scroll(function(){
 	//视频播放按钮垂直居中
 	$('#video .videoplay').css('padding-top',($('#video').height()-$('#video .videoplay').height())/2);
 });
+//
+function videoPaly(url){
+
+    $(".video_box").animate({top:0,opacity:1}).find("video").attr("src",url)[0].play();
+}
+
+$(".video_box .video_close").on("click",function(){
+    $(".video_box").animate({top:'-100%',opacity:0}).find("video")[0].pause();
+})
