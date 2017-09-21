@@ -263,6 +263,11 @@ body{
 .product img{
 	width: 100%;
 }
+	/*补充*/
+.swiper-container-product .swiper-slide{
+   cursor: pointer;
+   cursor: -ms-pointer;
+}
 /*芭莎*/
 #produceShowBS{
 	width: 100%;

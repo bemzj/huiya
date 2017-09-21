@@ -46,6 +46,10 @@ $('.proLeft').click(function(){
 $('.proRight').click(function(){
 	product.slideNext();
 });
+$('.swiper-container-product .swiper-slide').click(function(){
+	var index = $(this).index();
+	tile.slideTo(index, 1000, false);//切换到第一个slide，速度为1秒
+});
 //文档初始化
 $(function(){
 	//导航下来
