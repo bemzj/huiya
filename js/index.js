@@ -8,47 +8,77 @@ var banner = new Swiper('.swiper-container-banner', {
     nextButton: '.swiper-button-next',
     prevButton: '.swiper-button-prev'
 });
-//瓷砖轮播图
-var tile = new Swiper('.swiper-container-tile', {
-    direction: 'horizontal',
-    autoplay : 5000,
-    loop:true,
-    autoplayDisableOnInteraction : false,
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev'
-});
+
 //产品
 var product = new Swiper('.swiper-container-product', {
     direction: 'horizontal',
     slidesPerView : 6,
     slidesPerGroup : 1,
     spaceBetween : 20,
-    onInit: function(swiper){
-    	$('.proLeft').hide();
-    },
-    onSlideChangeStart: function(swiper){   	
-     if(swiper.isEnd)
-     {
-     	$('.proRight').hide();
-     }else{
-     	$('.proRight').show();
-     }
-     if(swiper.isBeginning){
-     	$('.proLeft').hide();    	
-     }else{
-     	$('.proLeft').show();
-     }
+    loop:true,
+    noSwiping : true,
+	noSwipingClass : 'stop-swiping',
+	onSlideChangeStart: function(swiper){
+//  	var index = swiper.activeIndex%12;
+//  	if(index==0)
+//  	{
+//  		index=12;
+//  	}
+		console.log();
+		var index1 =  $('.swiper-container-product').find('.swiper-slide-active').index();
+   		$('.swiper-container-product .swiper-slide').eq(index1+5).addClass('borderBlack');
+   		$('.swiper-container-product .swiper-slide').eq(index1+5).siblings('.swiper-slide').removeClass('borderBlack');
+    }
+});
+
+//瓷砖轮播图
+var slide = true;
+var tile = new Swiper('.swiper-container-tile', {
+    direction: 'horizontal',
+//  autoplay : 5000,
+    loop:true,
+    autoplayDisableOnInteraction : false,
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    onSlideChangeStart: function(swiper){
+    	var index = swiper.activeIndex%12;
+    	if(index==0)
+    	{
+    		index=12;
+    	}
+   		product.slideTo(index, 1000, false);
+   		$('.swiper-container-product .swiper-slide').eq(index+5).addClass('borderBlack');
+   		$('.swiper-container-product .swiper-slide').eq(index+5).siblings('.swiper-slide').removeClass('borderBlack');
     }
 });
 $('.proLeft').click(function(){
 	product.slidePrev();
+	var index = product.activeIndex%12;
+    if(index==0)
+    {
+    	index=12;
+    }
+   	tile.slideTo(index, 1000, false);
 });
 $('.proRight').click(function(){
 	product.slideNext();
+	slide=false;
+	var index = product.activeIndex%12;
+    if(index==0)
+    {
+    	index=12;
+    }
+   	tile.slideTo(index, 1000, false); 
 });
 $('.swiper-container-product .swiper-slide').click(function(){
-	var index = $(this).index();
-	tile.slideTo(index, 1000, false);//切换到第一个slide，速度为1秒
+	var index = ($(this).index()+7)%12;
+    if(index==0)
+    {
+    	index=12;
+    }
+    $(this).addClass('borderBlack');
+    $(this).siblings('.swiper-slide').removeClass('borderBlack');
+   	tile.slideTo(index, 1000, false);
 });
 //文档初始化
 $(function(){

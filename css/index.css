@@ -214,7 +214,7 @@ body{
 	width: 100%;
 }
 .tileBanner img{
-	width: 100%;
+	width: 99%;
 }
 .tileBanner .swiper-button-next{
 	background-image: url(../img/rightIcon.png);
@@ -253,15 +253,22 @@ body{
 	top: 120px;
 	left: -30px;
 	z-index: 6;
+	background:rgba(0,0,0,0);
 }
 .product .proRight{
 	position: absolute;
 	top: 120px;
 	right: -30px;
 	z-index: 5;
+	background: rgba(0,0,0,0);
 }
 .product img{
-	width: 100%;
+	width: 95%;
+	display: block;
+	margin: 0 auto;
+}
+.product .borderBlack img{
+	border: 2px solid black !important;
 }
 	/*补充*/
 .swiper-container-product .swiper-slide{
