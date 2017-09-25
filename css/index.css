@@ -209,67 +209,8 @@ body{
 #tile .twoNav ul li a:hover{
 	color: #b7dddf;
 }
-/*瓷砖轮播图*/
-.tileBanner{
-	width: 100%;
-}
-.tileBanner img{
-	width: 99%;
-}
-.tileBanner .swiper-button-next{
-	background-image: url(../img/rightIcon.png);
-	right: 0px;
-	padding: 12px 12px;
-	background-color: #bddfe1;
-}
-.tileBanner .swiper-button-prev{
-	background-image: url(../img/leftIcon.png);
-	background-color: #bddfe1;
-	padding: 12px 12px;
-	left: 0px;
-}
-.tileBanner .swiper-button-next:hover{
-	background-color: #4c4e4f;
-}
-.tileBanner .swiper-button-prev:hover{
-	background-color: #4c4e4f;
-}
-.productOut{
-	width: 100%;
-	background-color: #f6f7f7;
-}
-.produceIn{
-	max-width: 1192px;
-	margin: 0 auto;
-}
-.product{
-	width: 90%;
-	margin: 0 auto; 
-	padding: 55px 0px;
-	position: relative;
-}
-.product .proLeft{
-	position: absolute;
-	top: 120px;
-	left: -30px;
-	z-index: 6;
-	background:rgba(0,0,0,0);
-}
-.product .proRight{
-	position: absolute;
-	top: 120px;
-	right: -30px;
-	z-index: 5;
-	background: rgba(0,0,0,0);
-}
-.product img{
-	width: 95%;
-	display: block;
-	margin: 0 auto;
-}
-.product .borderBlack img{
-	border: 2px solid black !important;
-}
+
+
 	/*补充*/
 .swiper-container-product .swiper-slide{
    cursor: pointer;
@@ -602,3 +543,104 @@ body{
 .video_box video{width: 100%;height: 100%;}
 
 .video_close{width: 50px;height: 50px;border-radius: 50%;background: #b7dddf;text-align: center;line-height: 50px;color: #fff;font-size: 18px;z-index: 1000;top: 20px;right:20px;cursor: pointer;}
+
+/**插件样式添加**/
+
+.pc-slide {
+	width: 100%;
+	margin: 0 auto;
+}
+/*瓷砖轮播图*/
+
+
+.view .swiper-container {
+	width: 100%;
+}
+.view img{
+	/*width: 99%;*/
+}
+
+.view .arrow-left{
+
+	background-image: url(../img/rightIcon.png);
+	right: 0px;
+	padding: 12px 12px;
+	background-color: #bddfe1;
+
+}
+.view .arrow-right{
+
+	background-image: url(../img/leftIcon.png);
+	background-color: #bddfe1;
+	padding: 12px 12px;
+	left: 0px;
+
+}
+.view .arrow-left:hover{
+	background-color: #4c4e4f;
+}
+.view .arrow-right:hover{
+	background-color: #4c4e4f;
+}
+
+.product{
+	width: 90%;
+	margin: 0 auto;
+	padding: 55px 0px;
+	position: relative;
+}
+
+
+.preview {
+	width: 100%;
+	position: relative;
+	background-color: #f6f7f7;
+}
+
+.preview .swiper-container {
+	max-width: 1192px;
+	margin: 0 auto;
+	padding: 55px 0px;
+	position: relative;
+	/*margin-left: 35px;*/
+}
+
+.preview .swiper-slide {
+	width: 160px;
+	height: 160px;
+	margin: 0 5px;
+}
+
+.preview .slide6 {
+	width: 82px;
+}
+
+.preview .arrow-left {
+	background: url(../img/proLeft.png) no-repeat left top;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -9px;
+	width: 9px;
+	height: 18px;
+	z-index: 10;
+}
+
+.preview .arrow-right {
+	background: url(../img/proRight.png) no-repeat left bottom;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -9px;
+	width: 9px;
+	height: 18px;
+	z-index: 10;
+}
+
+.preview img {
+	padding: 1px;
+}
+
+.preview .active-nav img {
+	border: 2px solid #bddfe1;
+}

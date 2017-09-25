@@ -1,0 +1,36 @@
+{
+  "bsys":{
+    "banner":[
+      {
+        "big":[
+          {"thumb":"img/productBanner.png"},
+          {"thumb":"img/productBanner.png"}
+        ],
+        "small":[
+          {"thumb":"img/product01.png"},
+          {"thumb":"img/product01.png"}
+        ]
+      },
+      {
+        "big":[
+          {"thumb":"img/productBanner.png"},
+          {"thumb":"img/productBanner.png"}
+        ],
+        "small":[
+          {"thumb":"img/product01.png"},
+          {"thumb":"img/product01.png"}
+        ]
+      },
+      {
+        "big":[
+          {"thumb":"img/productBanner.png"},
+          {"thumb":"img/productBanner.png"}
+        ],
+        "small":[
+          {"thumb":"img/product01.png"},
+          {"thumb":"img/product01.png"}
+        ]
+      }
+    ]
+  }
+}

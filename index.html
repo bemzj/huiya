@@ -10,27 +10,18 @@
 		<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scrollReveal.js" ></script>
+        <script type="text/javascript" src="https://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
+        <script type="text/javascript" src="pcSlide/css/idangerous.swiper.css"></script>
+
 	</head>
-	<body>
+	<body id="vueMain">
 		<div id="content" style="position: absolute;width: 100%;">
 			<!--首页轮播-->
 			<div id="banner">
 				<div class="swiper-container swiper-container-banner">
 			        <div class="swiper-wrapper">
-			            <div class="swiper-slide">
-			            	<img src="img/banner.jpg" />
-			            </div>
-			            <div class="swiper-slide">
-			            	<img src="img/banner.jpg" />
-			            </div>
-			            <div class="swiper-slide">
-			            	<img src="img/banner.jpg" />
-			            </div>
-			            <div class="swiper-slide">
-			            	<img src="img/banner.jpg" />
-			            </div>
-			            <div class="swiper-slide">
-			            	<img src="img/banner.jpg" />
+			            <div class="swiper-slide" v-for="item in banners">
+			            	<img :src="item.thumb" />
 			            </div>
 			        </div>
 			        <!-- 如果需要导航按钮 -->
@@ -225,133 +216,85 @@
 					</ul>
 					<div class="clearl"></div>
 				</div>
-				<div class="tileBanner">
-					<div class="swiper-container swiper-container-tile">
-				        <div class="swiper-wrapper">
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">1</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">2</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">3</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">4</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">5</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">6</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">7</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">8</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">9</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">10</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">11</p>
-				            </div>
-				            <div class="swiper-slide">
-				            	<img src="img/productBanner.png" />
-				            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">12</p>
-				            </div>
-				        </div>
-				        <!-- 如果需要导航按钮 -->
-					    <div class="swiper-button-prev"></div>
-					    <div class="swiper-button-next"></div>
-				   </div>  
-				</div>
-				<div class="productOut">
-					<div class="produceIn">
-						<div class="product">
-							<div class="swiper-container swiper-container-product">
-						        <div class="swiper-wrapper">
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product01.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">1</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product02.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">2</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product03.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">3</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product04.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">4</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product05.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">5</p>
-						            </div>
-						            <div class="swiper-slide">
-						            	<img src="img/product06.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">6</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product01.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">7</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product02.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">8</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product03.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">9</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product04.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">10</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product05.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">11</p>
-						            </div>
-						            <div class="swiper-slide stop-swiping">
-						            	<img src="img/product06.png" />
-						            	<p style="position: absolute;font-size: 50px;left: 0;top: 0">12</p>
-						            </div>
-						        </div>				       	
-						   </div>  
-						   <!-- 如果需要导航按钮 -->
-						    <div class="swiper-button-prev proLeft"><a href="###"><img src="img/proLeft.png"/></a></div>
-						    <div class="swiper-button-next proRight"><a href="###"><img src="img/proRight.png"/></a></div>	    
-						</div>
-					</div>
-				</div>
+                <div class="pc-slide">
+                    <div class="view">
+                        <div class="swiper-container">
+                            <a class="swiper-button-next arrow-left" href="#"></a>
+                            <a class="swiper-button-prev arrow-right" href="#"></a>
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" v-for="item in productList.big">
+                                    <a href="javascript:;" ><img :src="item.thumb" alt=""></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="preview">
+                        <a class="arrow-left" href="#"></a>
+                        <a class="arrow-right" href="#"></a>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <template v-for="(key,item) in productList.small">
+                                    <template v-if="key==0">
+                                        <div class="swiper-slide active-nav">
+                                            <img :src="item.thumb" alt="">
+                                        </div>
+                                    </template>
+                                    <template v-else>
+                                        <div class="swiper-slide">
+                                            <img :src="item.thumb" alt="">
+                                        </div>
+                                    </template>
+                                </template>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearl"></div>
+                </div>
+<!--				<div class="tileBanner">-->
+<!--					<div class="swiper-container swiper-container-tile">-->
+<!---->
+<!--				        <div class="swiper-wrapper">-->
+<!--				            <div class="swiper-slide" v-for="item in productList.big">-->
+<!--				            	<img :src="item.thumb" />-->
+<!--				            </div>-->
+<!---->
+<!--				        </div>-->
+<!--				        <!-- 如果需要导航按钮 -->
+<!--					    <div class="swiper-button-prev"></div>-->
+<!--					    <div class="swiper-button-next"></div>-->
+<!---->
+<!--				   </div>  -->
+<!--				</div>-->
+<!--				<div class="productOut">-->
+<!--					<div class="produceIn">-->
+<!--						<div class="product">-->
+<!---->
+<!--							<div class="swiper-container swiper-container-product">-->
+<!--						        <div class="swiper-wrapper">-->
+<!--						            <div class="swiper-slide stop-swiping" v-for="item in productList.small">-->
+<!--                                        <img :src="item.thumb" />-->
+<!--						            </div>-->
+<!---->
+<!--						        </div>				       	-->
+<!--						   </div>  -->
+<!--						   <!-- 如果需要导航按钮 -->
+<!--						    <div class="swiper-button-prev proLeft"><a href="###"><img src="img/proLeft.png"/></a></div>-->
+<!--						    <div class="swiper-button-next proRight"><a href="###"><img src="img/proRight.png"/></a></div>-->
+<!---->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
 			</div>
 			<!--视频-->
 			<div id="video">
-				<div class="videoBox" onclick="videoPaly('http://ovy8sjkfb.bkt.clouddn.com/zls.mp4')">
+				<div class="videoBox" onclick="videoPaly('{{productVideo.video}}')">
 					<img src="img/videoBkg.png" />
 					<div class="videoplay">
 						<ul>
 							<li>
-								<p>芭莎岩石</p>
+								<p>{{productVideo.title}}</p>
 							</li>
 							<li>
 								<a href="###"><img src="img/bigplay.png" /></a>		
@@ -551,6 +494,7 @@
         </div>
 	</body>
 	<script type="text/javascript" src="js/index.js" ></script>
+    <script src="pcSlide/js/idangerous.swiper.min.js"></script>
 	<script>
 		//视频播放按钮垂直居中
 		$('#video .videoplay').css('padding-top',($('#video').height()-$('#video .videoplay').height())/2);
@@ -559,4 +503,5 @@
 		})();
 
 	</script>
+    <script type="text/javascript" src="js/vue.js" ></script>
 </html>
