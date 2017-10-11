@@ -3,32 +3,84 @@
     "banner":[
       {
         "big":[
-          {"thumb":"img/productBanner.png"},
-          {"thumb":"img/productBanner.png"}
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-basgabig.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-basgabig.jpg"}
         ],
         "small":[
-          {"thumb":"img/product01.png"},
-          {"thumb":"img/product01.png"}
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-bashasmall.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-bashasmall.jpg"}
         ]
-      },
+      }
+    ]
+  },
+  "tys":{
+    "banner":[
+      {
+        "big":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-tyssmall.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-tyssmall.jpg"}
+        ],
+        "small":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-tysbig.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-tysbig.jpg"}
+        ]
+      }
+    ]
+  },
+  "msnh":{
+    "banner":[
+      {
+        "big":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-msnhbig-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-msnhbig-2.jpg"}
+        ],
+        "small":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-msnhsmall-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-msnhsmall-2.jpg"}
+        ]
+      }
+    ]
+  },
+  "xdbw":{
+    "banner":[
+      {
+        "big":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwbig-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwbig-2.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwbig-3.jpg"}
+        ],
+        "small":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwsmall-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwsmall-2.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-xdbwsmall-3.jpg"}
+        ]
+      }
+    ]
+  },
+  "gyyx":{
+    "banner":[
+      {
+        "big":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-gyyxbig-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-gyyxbig-2.jpg"}
+        ],
+        "small":[
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-gyyxsmall-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-gyyxsmall-2.jpg"}
+        ]
+      }
+    ]
+  },
+  "dsjh":{
+    "banner":[
       {
         "big":[
           {"thumb":"img/productBanner.png"},
           {"thumb":"img/productBanner.png"}
         ],
         "small":[
-          {"thumb":"img/product01.png"},
-          {"thumb":"img/product01.png"}
-        ]
-      },
-      {
-        "big":[
-          {"thumb":"img/productBanner.png"},
-          {"thumb":"img/productBanner.png"}
-        ],
-        "small":[
-          {"thumb":"img/product01.png"},
-          {"thumb":"img/product01.png"}
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-dsjh-1.jpg"},
+          {"thumb":"http://huiya-product.hengdikeji.com/pc-dsjh-2.jpg"}
         ]
       }
     ]

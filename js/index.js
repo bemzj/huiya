@@ -2,7 +2,6 @@ var scrollh;
 //轮播图
 
 
-
 //文档初始化
 $(function(){
 	//导航下来
@@ -28,6 +27,7 @@ $(function(){
 			$('#popWindow').scrollTop(0);
 		});	
 	});
+
 });
 //窗口大小改变时
 $(window).resize(function(){

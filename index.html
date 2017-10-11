@@ -12,9 +12,30 @@
 		<script type="text/javascript" src="js/scrollReveal.js" ></script>
         <script type="text/javascript" src="https://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
         <script type="text/javascript" src="pcSlide/css/idangerous.swiper.css"></script>
-
+        <script>
+            //判断是否为手机端访问
+            var uaTest = /Android|webOS|Windows Phone|iPhone|ucweb|ucbrowser|iPod|BlackBerry/i.test(navigator.userAgent.toLowerCase());
+            var touchTest = 'ontouchend' in document;
+            if(uaTest && touchTest){
+                window.location.href = 'http://huiya.hengdikeji.com/api/huiyaphone/index.html';
+            }
+        </script>
 	</head>
 	<body id="vueMain">
+        <div style="display: none;">
+            <script src="https://s22.cnzz.com/z_stat.php?id=1264538472&web_id=1264538472" language="JavaScript"></script>
+            <!--图片预加载-->
+            <template v-for="item in product">
+                <template v-for="items in item.banner">
+                    <template v-for="items2 in items.big">
+                        <img src="{{items2.thumb}}" alt="">
+                    </template>
+
+                </template>
+
+            </template>
+
+        </div>
 		<div id="content" style="position: absolute;width: 100%;">
 			<!--首页轮播-->
 			<div id="banner">
@@ -116,7 +137,7 @@
 				</div>
 				<!--播放-->
 				<div class="playBox">
-					<a href="javascript:;" onclick="videoPaly('http://ovy8sjkfb.bkt.clouddn.com/video1111.mp4')" data-scroll-reveal="enter bottom and move 20px">播放视频</a>
+					<a style="display: none;" href="javascript:;" onclick="videoPaly('http://ovy8sjkfb.bkt.clouddn.com/video1111.mp4')" data-scroll-reveal="enter bottom and move 20px">播放视频</a>
 				</div>
 			</div>
 			<!--瓷砖展示-->
@@ -124,7 +145,7 @@
 				<div class="tileNav">
 					<ul>		                                                                                     
 						<li class="navs">
-							<a href="###"><p>芭莎岩石</p></a>
+							<a href="###"  v-on:click="replaceBanner('bsys',0)"><p>芭莎岩石</p></a>
 							<div class="twoNav" style="left: 0px;">
 								<ul>
 									<li>
@@ -140,7 +161,7 @@
 							</div>
 						</li>
 						<li class="navs">
-							<a href="###"><p>T石代</p></a>
+							<a href="###" v-on:click="replaceBanner('tys',0)"><p>T石代</p></a>
 							<div class="twoNav">
 								<ul>
 									<li>
@@ -156,17 +177,14 @@
 							</div>
 						</li>
 						<li class="navs">
-							<a href="###"><p>木色年华</p></a>
+							<a href="###" v-on:click="replaceBanner('msnh',0)"><p>木色年华</p></a>
 							<div class="twoNav">
 								<ul>
 									<li>
-										<a href="###">600x600mm</a>
+										<a href="###">900x900mm</a>
 									</li>
 									<li>
-										<a href="###">600x600mm</a>
-									</li>
-									<li>
-										<a href="###">600x600mm</a>
+										<a href="###">600x1200mm</a>
 									</li>
 								</ul>
 							</div>
@@ -175,7 +193,7 @@
 							<img src="titleImg/tileTitle.png" data-scroll-reveal="enter top and move 20px"/>
 						</li>
 						<li class="navs">
-							<a href="###"><p>现代布纹</p></a>
+							<a href="###" v-on:click="replaceBanner('xdbw',0)"><p>现代布纹</p></a>
 							<div class="twoNav">
 								<ul>
 									<li>
@@ -185,7 +203,7 @@
 							</div>
 						</li>
 						<li class="navs">
-							<a href="###"><p>工业印象</p></a>
+							<a href="###" v-on:click="replaceBanner('gyyx',0)"><p>工业印象</p></a>
 							<div class="twoNav">
 								<ul>
 									<li>
@@ -201,7 +219,7 @@
 							</div>
 						</li>
 						<li class="navs">
-							<a href="###"><p>都市几何</p></a>
+							<a href="###" v-on:click="replaceBanner('dsjh',0)"><p>都市几何</p></a>
 							<div class="twoNav">
 								<ul>
 									<li>
@@ -216,6 +234,7 @@
 					</ul>
 					<div class="clearl"></div>
 				</div>
+
                 <div class="pc-slide">
                     <div class="view">
                         <div class="swiper-container">
@@ -223,17 +242,18 @@
                             <a class="swiper-button-prev arrow-right" href="#"></a>
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="item in productList.big">
-                                    <a href="javascript:;" ><img :src="item.thumb" alt=""></a>
+                                    <a href="javascript:;" ><img :src="item.thumb" alt="" width="100%"></a>
                                 </div>
 
                             </div>
                         </div>
                     </div>
                     <div class="preview">
-                        <a class="arrow-left" href="#"></a>
-                        <a class="arrow-right" href="#"></a>
                         <div class="swiper-container">
-                            <div class="swiper-wrapper">
+
+                            <a class="arrow-left" href="#"></a>
+                            <a class="arrow-right" href="#"></a>
+                            <div class="swiper-wrapper" style="margin: 0 auto">
                                 <template v-for="(key,item) in productList.small">
                                     <template v-if="key==0">
                                         <div class="swiper-slide active-nav">
@@ -247,45 +267,14 @@
                                     </template>
                                 </template>
 
+                                <div class="clearl"></div>
                             </div>
+
                         </div>
+
                     </div>
-                    <div class="clearl"></div>
                 </div>
-<!--				<div class="tileBanner">-->
-<!--					<div class="swiper-container swiper-container-tile">-->
-<!---->
-<!--				        <div class="swiper-wrapper">-->
-<!--				            <div class="swiper-slide" v-for="item in productList.big">-->
-<!--				            	<img :src="item.thumb" />-->
-<!--				            </div>-->
-<!---->
-<!--				        </div>-->
-<!--				        <!-- 如果需要导航按钮 -->
-<!--					    <div class="swiper-button-prev"></div>-->
-<!--					    <div class="swiper-button-next"></div>-->
-<!---->
-<!--				   </div>  -->
-<!--				</div>-->
-<!--				<div class="productOut">-->
-<!--					<div class="produceIn">-->
-<!--						<div class="product">-->
-<!---->
-<!--							<div class="swiper-container swiper-container-product">-->
-<!--						        <div class="swiper-wrapper">-->
-<!--						            <div class="swiper-slide stop-swiping" v-for="item in productList.small">-->
-<!--                                        <img :src="item.thumb" />-->
-<!--						            </div>-->
-<!---->
-<!--						        </div>				       	-->
-<!--						   </div>  -->
-<!--						   <!-- 如果需要导航按钮 -->
-<!--						    <div class="swiper-button-prev proLeft"><a href="###"><img src="img/proLeft.png"/></a></div>-->
-<!--						    <div class="swiper-button-next proRight"><a href="###"><img src="img/proRight.png"/></a></div>-->
-<!---->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
+
 			</div>
 			<!--视频-->
 			<div id="video">
@@ -296,12 +285,13 @@
 							<li>
 								<p>{{productVideo.title}}</p>
 							</li>
-							<li>
-								<a href="###"><img src="img/bigplay.png" /></a>		
-							</li>
-							<li>
-								<p>播放视频</p>
-							</li>
+<!--                            -->
+<!--							<li>-->
+<!--								<a href="###"><img src="img/bigplay.png" /></a>		-->
+<!--							</li>-->
+<!--							<li>-->
+<!--								<p>播放视频</p>-->
+<!--							</li>-->
 						</ul>
 					</div>
 
@@ -472,7 +462,7 @@
 			<!--尾部-->
 			<div id="foot">
 				<div class="foot">
-					<a href="###"><img src="img/foot.jpg"/></a>
+					<a href="http://huiya.hengdikeji.com/api/" target="_blank"><img src="img/foot.jpg"/></a>
 				</div>
 			</div>
 		</div>

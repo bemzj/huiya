@@ -557,7 +557,7 @@ body{
 	width: 100%;
 }
 .view img{
-	/*width: 99%;*/
+	opacity:0;
 }
 
 .view .arrow-left{
@@ -608,39 +608,45 @@ body{
 .preview .swiper-slide {
 	width: 160px;
 	height: 160px;
-	margin: 0 5px;
+	/*margin: 0 5px;*/
 }
 
 .preview .slide6 {
 	width: 82px;
 }
-
+.previewBox{
+	width: auto;
+	position: relative;
+}
 .preview .arrow-left {
 	background: url(../img/proLeft.png) no-repeat left top;
 	position: absolute;
-	left: 10px;
-	top: 50%;
+	left: 0;
+	top: 47%;
 	margin-top: -9px;
-	width: 9px;
-	height: 18px;
+	width: 18px;
+	height: 35px;
 	z-index: 10;
 }
 
 .preview .arrow-right {
 	background: url(../img/proRight.png) no-repeat left bottom;
 	position: absolute;
-	right: 10px;
-	top: 50%;
+	right: 0;
+	top: 47%;
 	margin-top: -9px;
-	width: 9px;
-	height: 18px;
+	width: 18px;
+	height: 35px;
 	z-index: 10;
 }
 
 .preview img {
 	padding: 1px;
+	width: 95%;
+	margin: 0 2.5%;
+	display: block;
 }
 
 .preview .active-nav img {
-	border: 2px solid #bddfe1;
+	border: 1px solid #bddfe1;
 }
