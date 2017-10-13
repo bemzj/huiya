@@ -7,17 +7,17 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" href="css/index.css" />
+		<!--<link rel="stylesheet" href="pcSlide/css/idangerous.swiper.css" />-->
 		<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scrollReveal.js" ></script>
         <script type="text/javascript" src="https://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
-        <script type="text/javascript" src="pcSlide/css/idangerous.swiper.css"></script>
         <script>
             //判断是否为手机端访问
             var uaTest = /Android|webOS|Windows Phone|iPhone|ucweb|ucbrowser|iPod|BlackBerry/i.test(navigator.userAgent.toLowerCase());
             var touchTest = 'ontouchend' in document;
             if(uaTest && touchTest){
-                window.location.href = 'http://huiya.hengdikeji.com/api/huiyaphone/index.html';
+//              window.location.href = 'http://huiya.hengdikeji.com/api/huiyaphone/index.html';
             }
         </script>
 	</head>
@@ -46,8 +46,8 @@
 			            </div>
 			        </div>
 			        <!-- 如果需要导航按钮 -->
-				    <div class="swiper-button-prev"></div>
-				    <div class="swiper-button-next"></div>
+				    <div class="swiper-button-prev" id="prev"></div>
+				    <div class="swiper-button-next" id="next"></div>
 			   </div>  
 			</div>
 			<!--年轻-->
@@ -235,7 +235,7 @@
 					<div class="clearl"></div>
 				</div>
 
-                <div class="pc-slide">
+                <!--<div class="pc-slide">
                     <div class="view">
                         <div class="swiper-container">
                             <a class="swiper-button-next arrow-left" href="#"></a>
@@ -250,7 +250,6 @@
                     </div>
                     <div class="preview">
                         <div class="swiper-container">
-
                             <a class="arrow-left" href="#"></a>
                             <a class="arrow-right" href="#"></a>
                             <div class="swiper-wrapper" style="margin: 0 auto">
@@ -269,12 +268,78 @@
 
                                 <div class="clearl"></div>
                             </div>
-
                         </div>
-
                     </div>
-                </div>
-
+                </div>-->
+                
+                <div id="newBanner">
+					<div class="swiper-container swiper-container-new">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+							<div class="swiper-slide">
+								<img src="img/productBanner.png" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="oldBanner">
+					<div class="swiper-container swiper-container-old">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+							<div class="swiper-slide" >
+								<div class="boxImg">
+									<img src="img/product01.png" />
+									<p>T123456789</p>
+								</div>
+							</div>
+						</div>	
+					</div>	
+					<div class="swiper-button-prev" id="prev1"></div>
+    				<div class="swiper-button-next" id="next1"></div>
+				</div>
 			</div>
 			<!--视频-->
 			<div id="video">
@@ -461,8 +526,9 @@
 			</div>
 			<!--尾部-->
 			<div id="foot">
-				<div class="foot">
+				<div class="foot" style="position: relative;">					
 					<a href="http://huiya.hengdikeji.com/api/" target="_blank"><img src="img/foot.jpg"/></a>
+					<img src="img/hand.png" id="hands" />
 				</div>
 			</div>
 		</div>
@@ -484,7 +550,7 @@
         </div>
 	</body>
 	<script type="text/javascript" src="js/index.js" ></script>
-    <script src="pcSlide/js/idangerous.swiper.min.js"></script>
+    <!--<script src="pcSlide/js/idangerous.swiper.min.js"></script>-->
 	<script>
 		//视频播放按钮垂直居中
 		$('#video .videoplay').css('padding-top',($('#video').height()-$('#video .videoplay').height())/2);
