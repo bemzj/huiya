@@ -35,36 +35,36 @@ $(function(){
 		})
 	},800);
 	//产品轮播图
-	var proBanner1 = new Swiper('.swiper-container-new', {
-		pagination: '.swiper-pagination',
-		effect : 'fade',
-		loop:true,
-		onlyExternal : true,
-		
-	});
-	//产品轮播图
-	var proBanner2 = new Swiper('.swiper-container-old', {
-		pagination: '.swiper-pagination',
-		loop:true,
-		slidesPerView: 3,
-        paginationClickable: true,
-        spaceBetween: 10,
-		nextButton: '.swiper-button-next',
-    	prevButton: '.swiper-button-prev',
-		onSlideNextEnd:function(swiper){
-			proBanner1.slideNext();
-		},
-		onSlidePrevEnd:function(swiper){
-			proBanner1.slidePrev();
-		},
-		
-	});
-	$(document).on('click','#prev1',function(){
-		proBanner1.slidePrev();
-	});
-	$(document).on('click','#next1',function(){
-		proBanner1.slidePrev();
-	})
+	// var proBanner1 = new Swiper('.swiper-container-new', {
+	// 	pagination: '.swiper-pagination',
+	// 	effect : 'fade',
+	// 	loop:true,
+	// 	onlyExternal : true,
+	//
+	// });
+	// //产品轮播图
+	// var proBanner2 = new Swiper('.swiper-container-old', {
+	// 	pagination: '.swiper-pagination',
+	// 	loop:true,
+	// 	slidesPerView: 3,
+     //    paginationClickable: true,
+     //    spaceBetween: 10,
+	// 	nextButton: '.swiper-button-next',
+    	// prevButton: '.swiper-button-prev',
+	// 	onSlideNextEnd:function(swiper){
+	// 		proBanner1.slideNext();
+	// 	},
+	// 	onSlidePrevEnd:function(swiper){
+	// 		proBanner1.slidePrev();
+	// 	},
+	//
+	// });
+	// $(document).on('click','#prev1',function(){
+	// 	proBanner1.slidePrev();
+	// });
+	// $(document).on('click','#next1',function(){
+	// 	proBanner1.slidePrev();
+	// })
 });
 //窗口大小改变时
 $(window).resize(function(){

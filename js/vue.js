@@ -36,61 +36,7 @@ var all=new Vue({
             $this.product=res;
             $this.productList=res.bsys.banner[0];
 
-//          setTimeout(function(){
-//              var viewSwiper = new Swiper('.view .swiper-container', {
-//                  nextButton: '.arrow-left',
-//                  prevButton: '.arrow-right',
-//                  onInit:function(){
-//                      $('.view img').css({"opacity":1});
-//                  },
-//                  onSlideChangeStart: function() {
-//                      updateNavPosition()
-//                  }
-//              });
-//
-//              $('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
-//                  e.preventDefault()
-//                  if (viewSwiper.activeIndex == 0) {
-//                      viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
-//                      return
-//                  }
-//                  viewSwiper.swipePrev()
-//              })
-//              $('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
-//                  e.preventDefault()
-//                  if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
-//                      viewSwiper.swipeTo(0, 1000);
-//                      return
-//                  }
-//                  viewSwiper.swipeNext()
-//              })
-//
-//              var previewSwiper = new Swiper('.preview .swiper-container', {
-//                  visibilityFullFit: true,
-//                  slidesPerView: 'auto',
-//                  onlyExternal: true,
-//                  onSlideClick: function() {
-//                      viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
-//                  }
-//              })
-//
-//
-//              function updateNavPosition() {
-//                  $('.preview .active-nav').removeClass('active-nav');
-//                  var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
-//                  if (!activeNav.hasClass('swiper-slide-visible')) {
-//                      if (activeNav.index() > previewSwiper.activeIndex) {
-//                          var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
-//                          previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
-//                      } else {
-//                          previewSwiper.swipeTo(activeNav.index())
-//                      }
-//                  }
-//              }
-//              var preview=$('.preview');
-//              var sww=preview.find('.swiper-wrapper').width()+38;
-//              preview.find('.swiper-container').css({"width":sww+"px"});
-//          },500);
+            $this.newswiper();
         },'JSON')
 
     },
@@ -118,65 +64,66 @@ var all=new Vue({
                         $this.productList=res.dsjh.banner[index];
                         break;
                 }
+                $this.newswiper();
+            },'JSON')
+        },
+        newswiper:function(){
 
-                setTimeout(function(){
+            setTimeout(function(){
 
-                    var viewSwiper = new Swiper('.view .swiper-container', {
-                        width : window.innerWidth,
-                        nextButton: '.arrow-left',
-                        prevButton: '.arrow-right',
-                        onInit:function(){
-                            $('.view img').css({"opacity":1});
-                        },
-                        onSlideChangeStart: function() {
-                            updateNavPosition()
-                        }
-                    });
+                var viewSwiper = new Swiper('.swiper-container-new', {
 
-                    $('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
-                        e.preventDefault();
-                        if (viewSwiper.activeIndex == 0) {
-                            viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
-                            return
-                        }
-                        viewSwiper.swipePrev()
-                    })
-                    $('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
-                        e.preventDefault()
-                        if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
-                            viewSwiper.swipeTo(0, 1000);
-                            return
-                        }
-                        viewSwiper.swipeNext()
-                    })
+                    onInit:function(){
+                        $('.swiper-container-new img').css({"opacity":1});
+                    },
+                    onSlideChangeStart: function() {
+                        updateNavPosition()
+                    }
+                });
 
-                    var previewSwiper = new Swiper('.preview .swiper-container', {
-                        visibilityFullFit: true,
-                        slidesPerView: 'auto',
-                        onlyExternal: true,
-                        onSlideClick: function() {
-                            viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
-                        }
-                    })
+                $('#prev1').on('click', function(e) {
+                    e.preventDefault()
+                    if (viewSwiper.activeIndex == 0) {
+                        viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
+                        return
+                    }
+                    viewSwiper.swipePrev()
+                })
+                $('#next1').on('click', function(e) {
+                    e.preventDefault()
+                    if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
+                        viewSwiper.swipeTo(0, 1000);
+                        return
+                    }
+                    viewSwiper.swipeNext()
+                });
+
+                var previewSwiper = new Swiper('.swiper-container-old', {
+                    visibilityFullFit: true,
+                    slidesPerView: 'auto',
+                    onlyExternal: true,
+                    onSlideClick: function() {
+                        viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
+                    }
+                })
 
 
-                    function updateNavPosition() {
-                        $('.preview .active-nav').removeClass('active-nav');
-                        var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
-                        if (!activeNav.hasClass('swiper-slide-visible')) {
-                            if (activeNav.index() > previewSwiper.activeIndex) {
-                                var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
-                                previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
-                            } else {
-                                previewSwiper.swipeTo(activeNav.index())
-                            }
+                function updateNavPosition() {
+                    $('.swiper-container-old .swiper-slide-active').removeClass('swiper-slide-active');
+                    var activeNav = $('.swiper-container-old .swiper-slide').eq(viewSwiper.activeIndex).addClass('swiper-slide-active');
+                    if (!activeNav.hasClass('swiper-slide-visible')) {
+                        if (activeNav.index() > previewSwiper.activeIndex) {
+                            var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1;
+                            previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
+                        } else {
+                            previewSwiper.swipeTo(activeNav.index())
                         }
                     }
-                    var preview=$('.preview');
-                    var sww=preview.find('.swiper-wrapper').width()+38;
-                    preview.find('.swiper-container').css({"width":sww+"px"});
-                },500);
-            },'JSON')
+                }
+                var preview=$('.swiper-container-old');
+                var sww=preview.find('.swiper-wrapper').width()+38;
+                preview.find('.swiper-container').css({"width":sww+"px"});
+            },500);
         }
     }
 

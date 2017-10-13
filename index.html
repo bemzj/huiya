@@ -7,8 +7,10 @@
 		<link rel="stylesheet" href="css/reset.css" />
 		<link rel="stylesheet" href="css/swiper-3.4.2.min.css" />
 		<link rel="stylesheet" href="css/index.css" />
-		<!--<link rel="stylesheet" href="pcSlide/css/idangerous.swiper.css" />-->
-		<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>
+
+		<link rel="stylesheet" href="pcSlide/css/idangerous.swiper.css" />
+
+<!--		<script type="text/javascript" src="js/swiper-3.4.2.min.js" ></script>-->
 		<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 		<script type="text/javascript" src="js/scrollReveal.js" ></script>
         <script type="text/javascript" src="https://static.runoob.com/assets/vue/1.0.11/vue.min.js"></script>
@@ -235,11 +237,10 @@
 					<div class="clearl"></div>
 				</div>
 
-                <!--<div class="pc-slide">
-                    <div class="view">
-                        <div class="swiper-container">
-                            <a class="swiper-button-next arrow-left" href="#"></a>
-                            <a class="swiper-button-prev arrow-right" href="#"></a>
+
+                    <div class="view" id="newBanner">
+                        <div class="swiper-container swiper-container-new">
+
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide" v-for="item in productList.big">
                                     <a href="javascript:;" ><img :src="item.thumb" alt="" width="100%"></a>
@@ -248,20 +249,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="preview">
-                        <div class="swiper-container">
-                            <a class="arrow-left" href="#"></a>
-                            <a class="arrow-right" href="#"></a>
-                            <div class="swiper-wrapper" style="margin: 0 auto">
+                    <div id="oldBanner">
+                        <div class="swiper-container swiper-container-old">
+                            <div class="swiper-wrapper">
                                 <template v-for="(key,item) in productList.small">
                                     <template v-if="key==0">
-                                        <div class="swiper-slide active-nav">
-                                            <img :src="item.thumb" alt="">
+                                        <div class="swiper-slide swiper-slide-active">
+                                            <div class="boxImg">
+                                                <img :src="item.thumb" alt="">
+                                                <p>{{item.title}}</p>
+                                            </div>
                                         </div>
                                     </template>
                                     <template v-else>
                                         <div class="swiper-slide">
-                                            <img :src="item.thumb" alt="">
+                                            <div class="boxImg">
+                                                <img :src="item.thumb" alt="">
+                                                <p>{{item.title}}</p>
+                                            </div>
+
                                         </div>
                                     </template>
                                 </template>
@@ -269,77 +275,78 @@
                                 <div class="clearl"></div>
                             </div>
                         </div>
+                        <div class="swiper-button-prev" id="prev1"></div>
+                        <div class="swiper-button-next" id="next1"></div>
                     </div>
-                </div>-->
-                
-                <div id="newBanner">
-					<div class="swiper-container swiper-container-new">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-							<div class="swiper-slide">
-								<img src="img/productBanner.png" />
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="oldBanner">
-					<div class="swiper-container swiper-container-old">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-							<div class="swiper-slide" >
-								<div class="boxImg">
-									<img src="img/product01.png" />
-									<p>T123456789</p>
-								</div>
-							</div>
-						</div>	
-					</div>	
-					<div class="swiper-button-prev" id="prev1"></div>
-    				<div class="swiper-button-next" id="next1"></div>
-				</div>
+
+<!--                <div id="newBanner">-->
+<!--					<div class="swiper-container swiper-container-new">-->
+<!--						<div class="swiper-wrapper">-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--							<div class="swiper-slide">-->
+<!--								<img src="img/productBanner.png" />-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div id="oldBanner">-->
+<!--					<div class="swiper-container swiper-container-old">-->
+<!--						<div class="swiper-wrapper">-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--							<div class="swiper-slide" >-->
+<!--								<div class="boxImg">-->
+<!--									<img src="img/product01.png" />-->
+<!--									<p>T123456789</p>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>	-->
+<!--					</div>	-->
+<!--					<div class="swiper-button-prev" id="prev1"></div>-->
+<!--    				<div class="swiper-button-next" id="next1"></div>-->
+<!--				</div>-->
 			</div>
 			<!--视频-->
 			<div id="video">
@@ -549,8 +556,9 @@
             <div class="fb-position-absolute video_close">X</div>
         </div>
 	</body>
+    <script src="pcSlide/js/idangerous.swiper.min.js"></script>
 	<script type="text/javascript" src="js/index.js" ></script>
-    <!--<script src="pcSlide/js/idangerous.swiper.min.js"></script>-->
+
 	<script>
 		//视频播放按钮垂直居中
 		$('#video .videoplay').css('padding-top',($('#video').height()-$('#video .videoplay').height())/2);
