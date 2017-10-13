@@ -19,7 +19,7 @@
             var uaTest = /Android|webOS|Windows Phone|iPhone|ucweb|ucbrowser|iPod|BlackBerry/i.test(navigator.userAgent.toLowerCase());
             var touchTest = 'ontouchend' in document;
             if(uaTest && touchTest){
-//              window.location.href = 'http://huiya.hengdikeji.com/api/huiyaphone/index.html';
+              window.location.href = 'http://huiya.hengdikeji.com/api/huiyaphone/index.html';
             }
         </script>
 	</head>
@@ -148,90 +148,90 @@
 					<ul>		                                                                                     
 						<li class="navs">
 							<a href="###"  v-on:click="replaceBanner('bsys',0)"><p>芭莎岩石</p></a>
-							<div class="twoNav" style="left: 0px;">
-								<ul>
-									<li>
-										<a href="###">900x900mm</a>
-									</li>
-									<li>
-										<a href="###">600x600mm</a>
-									</li>
-									<li>
-										<a href="###">600x1200mm</a>
-									</li>
-								</ul>
-							</div>
+<!--							<div class="twoNav" style="left: 0px;">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">900x900mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x600mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x1200mm</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 						<li class="navs">
 							<a href="###" v-on:click="replaceBanner('tys',0)"><p>T石代</p></a>
-							<div class="twoNav">
-								<ul>
-									<li>
-										<a href="###">900x900mm</a>
-									</li>
-									<li>
-										<a href="###">900x1800mm</a>
-									</li>
-									<li>
-										<a href="###">600x1200mm</a>
-									</li>
-								</ul>
-							</div>
+<!--							<div class="twoNav">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">900x900mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">900x1800mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x1200mm</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 						<li class="navs">
 							<a href="###" v-on:click="replaceBanner('msnh',0)"><p>木色年华</p></a>
-							<div class="twoNav">
-								<ul>
-									<li>
-										<a href="###">900x900mm</a>
-									</li>
-									<li>
-										<a href="###">600x1200mm</a>
-									</li>
-								</ul>
-							</div>
+<!--							<div class="twoNav">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">900x900mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x1200mm</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 						<li>
 							<img src="titleImg/tileTitle.png" data-scroll-reveal="enter top and move 20px"/>
 						</li>
 						<li class="navs">
 							<a href="###" v-on:click="replaceBanner('xdbw',0)"><p>现代布纹</p></a>
-							<div class="twoNav">
-								<ul>
-									<li>
-										<a href="###">600x600mm</a>
-									</li>
-								</ul>
-							</div>
+<!--							<div class="twoNav">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">600x600mm</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 						<li class="navs">
 							<a href="###" v-on:click="replaceBanner('gyyx',0)"><p>工业印象</p></a>
-							<div class="twoNav">
-								<ul>
-									<li>
-										<a href="###">900x900mm</a>
-									</li>
-									<li>
-										<a href="###">600x600mm</a>
-									</li>
-									<li>
-										<a href="###">600x1200mm</a>
-									</li>
-								</ul>
-							</div>
+<!--							<div class="twoNav">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">900x900mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x600mm</a>-->
+<!--									</li>-->
+<!--									<li>-->
+<!--										<a href="###">600x1200mm</a>-->
+<!--									</li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 						<li class="navs">
 							<a href="###" v-on:click="replaceBanner('dsjh',0)"><p>都市几何</p></a>
-							<div class="twoNav">
-								<ul>
-									<li>
-										<a href="###">900x900mm</a>
-									</li>
-                                    <li>
-                                        <a href="###">600x1200mm</a>
-                                    </li>
-								</ul>
-							</div>
+<!--							<div class="twoNav">-->
+<!--								<ul>-->
+<!--									<li>-->
+<!--										<a href="###">900x900mm</a>-->
+<!--									</li>-->
+<!--                                    <li>-->
+<!--                                        <a href="###">600x1200mm</a>-->
+<!--                                    </li>-->
+<!--								</ul>-->
+<!--							</div>-->
 						</li>
 					</ul>
 					<div class="clearl"></div>
@@ -242,9 +242,19 @@
                         <div class="swiper-container swiper-container-new">
 
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide" v-for="item in productList.big">
-                                    <a href="javascript:;" ><img :src="item.thumb" alt="" width="100%"></a>
-                                </div>
+                                <template v-for="item in productList.big">
+                                    <template v-if="key==0">
+                                        <div class="swiper-slide swiper-slide-visible swiper-slide-active">
+                                            <a href="javascript:;" ><img :src="item.thumb" alt="" width="100%"></a>
+                                        </div>
+                                    </template>
+                                    <template v-else=>
+                                        <div class="swiper-slide">
+                                            <a href="javascript:;" ><img :src="item.thumb" alt="" width="100%"></a>
+                                        </div>
+                                    </template>
+                                </template>
+
 
                             </div>
                         </div>
@@ -347,6 +357,7 @@
 <!--					<div class="swiper-button-prev" id="prev1"></div>-->
 <!--    				<div class="swiper-button-next" id="next1"></div>-->
 <!--				</div>-->
+
 			</div>
 			<!--视频-->
 			<div id="video">

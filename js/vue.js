@@ -124,6 +124,7 @@ var all=new Vue({
                 var sww=preview.find('.swiper-wrapper').width()+38;
                 preview.find('.swiper-container').css({"width":sww+"px"});
             },500);
+
         }
     }
 
