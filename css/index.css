@@ -727,3 +727,4 @@ body{
     background-repeat: no-repeat;
     right: -32px;
 }
+.swiper-container-new .swiper-slide{ display: none;  }  .swiper-container-new .active-nav{display: block; }

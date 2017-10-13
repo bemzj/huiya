@@ -36,62 +36,25 @@ var all=new Vue({
             $this.product=res;
             $this.productList=res.bsys.banner[0];
 
-//          setTimeout(function(){
-//              var viewSwiper = new Swiper('.view .swiper-container', {
-//                  nextButton: '.arrow-left',
-//                  prevButton: '.arrow-right',
-//                  onInit:function(){
-//                      $('.view img').css({"opacity":1});
-//                  },
-//                  onSlideChangeStart: function() {
-//                      updateNavPosition()
-//                  }
-//              });
-//
-//              $('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
-//                  e.preventDefault()
-//                  if (viewSwiper.activeIndex == 0) {
-//                      viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
-//                      return
-//                  }
-//                  viewSwiper.swipePrev()
-//              })
-//              $('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
-//                  e.preventDefault()
-//                  if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
-//                      viewSwiper.swipeTo(0, 1000);
-//                      return
-//                  }
-//                  viewSwiper.swipeNext()
-//              })
-//
-//              var previewSwiper = new Swiper('.preview .swiper-container', {
-//                  visibilityFullFit: true,
-//                  slidesPerView: 'auto',
-//                  onlyExternal: true,
-//                  onSlideClick: function() {
-//                      viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
-//                  }
-//              })
-//
-//
-//              function updateNavPosition() {
-//                  $('.preview .active-nav').removeClass('active-nav');
-//                  var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
-//                  if (!activeNav.hasClass('swiper-slide-visible')) {
-//                      if (activeNav.index() > previewSwiper.activeIndex) {
-//                          var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
-//                          previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
-//                      } else {
-//                          previewSwiper.swipeTo(activeNav.index())
-//                      }
-//                  }
-//              }
-//              var preview=$('.preview');
-//              var sww=preview.find('.swiper-wrapper').width()+38;
-//              preview.find('.swiper-container').css({"width":sww+"px"});
-//          },500);
-        },'JSON')
+             // setTimeout(function(){
+             //     //产品轮播图
+             //     var proBanner2 = new Swiper('.swiper-container-old', {
+             //         pagination: '.swiper-pagination',
+             //         loop:true,
+             //         slidesPerView: 3,
+             //         spaceBetween: 10,
+             //         nextButton: '.swiper-button-next',
+             //         prevButton: '.swiper-button-prev',
+             //         onSlideChangeEnd: function(swiper){
+             //            var $i=swiper.activeIndex; //切换结束时，告诉我现在是第几个slide
+             //            var $k=$i-3;
+             //            $('.swiper-container-new .swiper-slide').removeClass('active-nav');
+             //            $('.swiper-container-new .swiper-slide').eq($k).addClass('active-nav');
+             //         }
+             //     })
+             //
+             // },1100);
+        },'JSON');
 
     },
     methods:{
@@ -121,60 +84,29 @@ var all=new Vue({
 
                 setTimeout(function(){
 
-                    var viewSwiper = new Swiper('.view .swiper-container', {
-                        width : window.innerWidth,
-                        nextButton: '.arrow-left',
-                        prevButton: '.arrow-right',
-                        onInit:function(){
-                            $('.view img').css({"opacity":1});
-                        },
-                        onSlideChangeStart: function() {
-                            updateNavPosition()
-                        }
-                    });
+                    //产品轮播图
+                    var proBanner2 = new Swiper('.swiper-container-old', {
+                        pagination: '.swiper-pagination',
+                        loop:true,
+                        slidesPerView: 3,
 
-                    $('.view .arrow-left,.preview .arrow-left').on('click', function(e) {
-                        e.preventDefault();
-                        if (viewSwiper.activeIndex == 0) {
-                            viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
-                            return
-                        }
-                        viewSwiper.swipePrev()
-                    })
-                    $('.view .arrow-right,.preview .arrow-right').on('click', function(e) {
-                        e.preventDefault()
-                        if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
-                            viewSwiper.swipeTo(0, 1000);
-                            return
-                        }
-                        viewSwiper.swipeNext()
-                    })
-
-                    var previewSwiper = new Swiper('.preview .swiper-container', {
-                        visibilityFullFit: true,
-                        slidesPerView: 'auto',
-                        onlyExternal: true,
-                        onSlideClick: function() {
-                            viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
+                        spaceBetween: 10,
+                        nextButton: '.swiper-button-next',
+                        prevButton: '.swiper-button-prev',
+                        onSlideChangeEnd: function(swiper){
+                            var $i=swiper.activeIndex; //切换结束时，告诉我现在是第几个slide
+                            var $k=$i-3;
+                            $('.swiper-container-new .swiper-slide').removeClass('active-nav');
+                            $('.swiper-container-new .swiper-slide').eq($k).addClass('active-nav');
                         }
                     })
-
-
-                    function updateNavPosition() {
-                        $('.preview .active-nav').removeClass('active-nav');
-                        var activeNav = $('.preview .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav')
-                        if (!activeNav.hasClass('swiper-slide-visible')) {
-                            if (activeNav.index() > previewSwiper.activeIndex) {
-                                var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1
-                                previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
-                            } else {
-                                previewSwiper.swipeTo(activeNav.index())
-                            }
-                        }
-                    }
-                    var preview=$('.preview');
-                    var sww=preview.find('.swiper-wrapper').width()+38;
-                    preview.find('.swiper-container').css({"width":sww+"px"});
+                    $('.swiper-container-old .swiper-slide').on('click',function(){
+                        var $i=$(this).index();
+                        var $k=$i-3;
+                        proBanner2.slideTo($k);
+                        $('.swiper-container-new .swiper-slide').removeClass('active-nav');
+                        $('.swiper-container-new .swiper-slide').eq($k).addClass('active-nav');
+                    })
                 },500);
             },'JSON')
         }
