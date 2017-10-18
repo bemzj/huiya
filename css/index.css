@@ -21,6 +21,7 @@ body{
 /*轮播图*/
 #banner{
 	width: 100%;
+
 }
 #banner img{
 	width: 100%;
@@ -32,12 +33,15 @@ body{
 	background-color: #bddfe1;
 	top: 48%;
 }
+
 #banner .swiper-button-prev{
 	background-image: url(../img/leftIcon.png);
+	background-repeat:no-repeat ;
 	background-color: #bddfe1;
 	padding: 12px 12px;
 	left: 0px;
 	top: 48%;
+
 }
 #banner .swiper-button-next:hover{
 	background-color: #4c4e4f;
@@ -664,69 +668,76 @@ body{
 	width: 100%;
 }
 #oldBanner{
-	padding: 50px 0;
-	width: 504px;
+	padding: 35px 0;
+	width: 80%;
 	margin: 0 auto;
 	position: relative;
 }
+#oldBanner .swiper-container-old{
+	width: 504px;
+}
 #oldBanner .swiper-slide{
 	width:158px;
-	margin: 0 5px;
+	/*margin: 0 5px;*/
+	padding: 0 5px;
+
 }
-.swiper-slide-active .boxImg{
-	box-shadow: 0px 0px 1px 1px #999999;
-	border-top: 1px solid #999999!important;
+
+.active-nav .boxImg{
+	box-shadow: 0 3px 11px 1px #999999;
+	border-top: 1px solid rgba(153,153,153,0.8) !important;
 }
 #oldBanner .swiper-slide .boxImg{
 	margin: 0 auto;
-	width: 156px;
-	border-top: 1px solid rgba(0,0,0,0);	
+	width: 134px;
+
+	/*border-top: 1px solid rgba(0,0,0,0);	*/
 }
-#oldBanner .swiper-slide .boxImg img{
-	display: block;
+#oldBanner .swiper-slide .boxImg .imgBox{
 	padding: 4px;
-	width: 148px;
-	
+	width: 120px;
+	height: 120px;
+	padding-top: 10px;
+	margin: 0 auto;
+	line-height: 120px;
+}
+#oldBanner .swiper-slide .boxImg .imgBox img{
+	display: inline-block;
+	vertical-align: middle;
 }
 #oldBanner .swiper-container{
-	width: 100%;
+	/*width: 100%;*/
 }
 #oldBanner p{
 	text-align: center;
 	font-size: 16px;
 	margin-bottom: 4px;
+	margin-top: 4px;
+	line-height: 34px;
 }
 #prev1{
-    position: absolute;
-    top: 50%;
-    width: 27px;
-    height: 44px;
-    margin-top: -22px;
-    z-index: 10;
-    cursor: pointer;
-    background-image: url(../img/left1.png);
-    -moz-background-size: 32px 32px;
-    -webkit-background-size: 32px 32px;
-    background-size: 32px 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    left: -34px;
+	position: absolute;
+	background-image: url(../img/leftIcon.png);
+	background-repeat: no-repeat;
+	background-color: #bddfe1;
+	padding: 12px 12px;
+	left: 0;
+	top: 48%;
+}
+#prev1:hover {
+	background-color: #4c4e4f;
 }
 #next1{
-    position: absolute;
-    top: 50%;
-    width: 27px;
-    height: 44px;
-    margin-top: -22px;
-    z-index: 10;
-    cursor: pointer;
-    background-image: url(../img/right1.png);
-    -moz-background-size: 32px 32px;
-    -webkit-background-size: 32px 32px;
-    background-size: 32px 32px;
-    background-position: center;
-    background-repeat: no-repeat;
-    right: -32px;
+	position: absolute;
+	background-image: url(../img/rightIcon.png);
+	background-repeat: no-repeat;
+	background-color: #bddfe1;
+	padding: 12px 12px;
+	right: 0;
+	top: 48%;
+}
+#next1:hover{
+	background-color: #4c4e4f;
 }
 #produceShowGY .produceLeft>.bslron>img:nth-child(4) {
     width: 15.8%;
@@ -743,4 +754,68 @@ body{
     top: 29%;
     left: 51.5%;
 }
+/**2017-10-15**/
+#oldBanner .model{
+	width: 50%;
+	float: left;
+	position: relative;
+}
+#oldBanner .size{
+	width: 40%;
+	float: left;
+	margin-left: 5%;
+}
 
+#oldBanner .title{
+	font-size: 24px;
+	color: #030303;
+	margin-bottom: 19px;
+}
+.size .dt{
+	display: table;
+	margin-left: 7%;
+}
+.sizeBox{
+	width: 100%;
+	min-height: 90px;
+	/*position: relative;*/
+	display: table-row;
+}
+.sizeBox .dtd{
+	display: table-cell;
+	vertical-align: bottom;
+	padding: 7px;
+}
+.sizeBox .dtd .ddt{
+	display: table;
+}
+.sizeBox .dtd .ddr{
+	display: table-row;
+}
+.sizeBox .fst{
+	border: 2px solid rgb(200,201,202);
+	margin: 0 5px;
+	color: rgb(134,135,136);
+	font-size: 16px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#prev2{
+	position: absolute;
+	background-image: url(../img/proLeft.png);
+	background-repeat: no-repeat;
+
+	padding: 12px 12px;
+	left: 0;
+	top: 48%;
+}
+#next2{
+	position: absolute;
+	background-image: url(../img/proRight.png);
+	background-repeat: no-repeat;
+	padding: 12px 12px;
+	right: 0;
+	top: 48%;
+}

@@ -1,0 +1,44 @@
+
+.z99{
+    z-index: 99;
+}
+img{
+    max-width: 100%;
+    display: inline-block;
+}
+.content{
+    width: 980px;
+    margin: 0 auto;
+}
+.p{
+    width: 100%;
+    height: auto;
+    background: url(../img/bsp1bg.jpg) no-repeat;
+    background-size: 100%;
+    padding-top: 80px;
+}
+.bg{
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index:1;
+}
+.pro{
+
+}
+.title{
+    width: 100%;
+    text-align: center;
+}
+.txt{
+    font-size: 20px;
+    text-align: center;
+    line-height: 32px;
+    margin-top: 20px;
+}
+.j{
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+}

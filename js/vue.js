@@ -24,6 +24,7 @@ var all=new Vue({
                     nextButton: '.swiper-button-next',
                     prevButton: '.swiper-button-prev',
                 });
+
                 $('#prev').click(function(){
                 	banner.swipePrev();
                 });
@@ -70,48 +71,68 @@ var all=new Vue({
         newswiper:function(){
 
             setTimeout(function(){
-
                 var viewSwiper = new Swiper('.swiper-container-new', {
-
-                    onInit:function(){
+                    onInit:function(sw){
                         $('.swiper-container-new img').css({"opacity":1});
+                        sw.swipeTo(0);
                     },
+                    observer:true,
+                    observeParents:true,
                     onSlideChangeStart: function() {
-                        updateNavPosition()
+                        upprev();
                     }
                 });
-
-                $('#prev1').on('click', function(e) {
-                    e.preventDefault()
-                    if (viewSwiper.activeIndex == 0) {
-                        viewSwiper.swipeTo(viewSwiper.slides.length - 1, 1000);
-                        return
-                    }
-                    viewSwiper.swipePrev()
-                })
-                $('#next1').on('click', function(e) {
-                    e.preventDefault()
-                    if (viewSwiper.activeIndex == viewSwiper.slides.length - 1) {
-                        viewSwiper.swipeTo(0, 1000);
-                        return
-                    }
-                    viewSwiper.swipeNext()
-                });
-
                 var previewSwiper = new Swiper('.swiper-container-old', {
                     visibilityFullFit: true,
                     slidesPerView: 'auto',
+
                     onlyExternal: true,
                     onSlideClick: function() {
-                        viewSwiper.swipeTo(previewSwiper.clickedSlideIndex)
+                        viewSwiper.swipeTo(previewSwiper.clickedSlideIndex);
+                    },
+                    onInit:function(){
+                        var l=$('.swiper-container-old .swiper-slide').length;
+                        if(l<3){
+                            var w=$('.swiper-container-old').children('.swiper-wrapper').width();
+                            $('.swiper-container-old').css("width",w+'px');
+
+                        }else{
+                            $('.swiper-container-old').css("width",'504px');
+                        }
                     }
-                })
+                });
 
+                $('#prev1,#prev2').on('click', function(e) {
+                    e.preventDefault();
 
-                function updateNavPosition() {
-                    $('.swiper-container-old .swiper-slide-active').removeClass('swiper-slide-active');
-                    var activeNav = $('.swiper-container-old .swiper-slide').eq(viewSwiper.activeIndex).addClass('swiper-slide-active');
+                    var l= $('.swiper-container-new').find('.swiper-slide').length;
+                    if (viewSwiper.activeIndex == 0) {
+                        viewSwiper.swipeTo(l - 1, 1000);
+                        return
+                    }
+                    viewSwiper.swipePrev()
+                });
+                $('#next1,#next2').on('click', function(e) {
+                    e.preventDefault();
+
+                    var l= $('.swiper-container-new').find('.swiper-slide').length;
+
+                    if (viewSwiper.activeIndex == l - 1) {
+                        viewSwiper.swipeTo(0, 1000);
+                        return
+                    }
+
+                    viewSwiper.swipeNext()
+                });
+
+                function upprev(){
+
+                    $('.swiper-container-old .active-nav').removeClass('active-nav');
+                    var activeNav = $('.swiper-container-old .swiper-slide').eq(viewSwiper.activeIndex).addClass('active-nav');
+
                     if (!activeNav.hasClass('swiper-slide-visible')) {
+
+
                         if (activeNav.index() > previewSwiper.activeIndex) {
                             var thumbsPerNav = Math.floor(previewSwiper.width / activeNav.width()) - 1;
                             previewSwiper.swipeTo(activeNav.index() - thumbsPerNav)
@@ -120,9 +141,7 @@ var all=new Vue({
                         }
                     }
                 }
-                var preview=$('.swiper-container-old');
-                var sww=preview.find('.swiper-wrapper').width()+38;
-                preview.find('.swiper-container').css({"width":sww+"px"});
+
             },500);
 
         }
